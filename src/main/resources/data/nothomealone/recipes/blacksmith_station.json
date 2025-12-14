@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IFI",
+    "LAR",
+    "CCC"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "L": {
+      "item": "minecraft:lava_bucket"
+    },
+    "A": {
+      "item": "minecraft:anvil"
+    },
+    "R": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "nothomealone:blacksmith_station"
+  }
+}

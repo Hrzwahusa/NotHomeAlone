@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "nothomealone:block/builder_station_level_1_top",
+    "down": "minecraft:block/oak_planks",
+    "up": "nothomealone:block/builder_station_level_1_top",
+    "north": "nothomealone:block/builder_station_level_1_side",
+    "south": "nothomealone:block/builder_station_level_1_side",
+    "east": "nothomealone:block/builder_station_level_1_side",
+    "west": "nothomealone:block/builder_station_level_1_side"
+  }
+}

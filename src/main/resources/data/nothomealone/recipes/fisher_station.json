@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PFP",
+    "PBP"
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "F": {
+      "item": "minecraft:fishing_rod"
+    },
+    "B": {
+      "item": "minecraft:oak_boat"
+    }
+  },
+  "result": {
+    "item": "nothomealone:fisher_station"
+  }
+}

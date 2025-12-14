@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LLL",
+    "LAL",
+    "LLL"
+  ],
+  "key": {
+    "L": {
+      "tag": "minecraft:logs"
+    },
+    "A": {
+      "item": "minecraft:wooden_axe"
+    }
+  },
+  "result": {
+    "item": "nothomealone:lumberjack_station"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DSD",
+    "PCA",
+    "DDD"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:dirt"
+    },
+    "S": {
+      "item": "minecraft:wooden_shovel"
+    },
+    "P": {
+      "item": "minecraft:wooden_pickaxe"
+    },
+    "C": {
+      "item": "minecraft:crafting_table"
+    },
+    "A": {
+      "item": "minecraft:wooden_axe"
+    }
+  },
+  "result": {
+    "item": "nothomealone:builder_station"
+  }
+}

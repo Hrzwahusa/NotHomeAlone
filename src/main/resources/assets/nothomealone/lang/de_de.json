@@ -1,0 +1,23 @@
+{
+  "block.nothomealone.builder_station": "Baumeister Station",
+  "block.nothomealone.lumberjack_station": "Holzfäller Station",
+  "block.nothomealone.hunter_station": "Jäger Station",
+  "block.nothomealone.farmer_station": "Bauern Station",
+  "block.nothomealone.miner_station": "Minenarbeiter Station",
+  "block.nothomealone.fisher_station": "Fischer Station",
+  "block.nothomealone.storage_station": "Lager Station",
+  "block.nothomealone.blacksmith_station": "Schmiede Station",
+  
+  "creativetab.nothomealone_tab": "Not Home Alone",
+  
+  "entity.nothomealone.builder": "Baumeister",
+  "entity.nothomealone.lumberjack": "Holzfäller",
+  "entity.nothomealone.hunter": "Jäger",
+  "entity.nothomealone.farmer": "Bauer",
+  "entity.nothomealone.miner": "Minenarbeiter",
+  "entity.nothomealone.fisher": "Fischer",
+  "entity.nothomealone.storage": "Lagerverwalter",
+  "entity.nothomealone.blacksmith": "Schmied",
+  
+  "container.nothomealone.station": "Stationsmaterialien"
+}

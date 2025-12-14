@@ -43,6 +43,16 @@ public class ModEntities {
                     .sized(0.6f, 1.95f)
                     .build("fisher"));
 
+    public static final RegistryObject<EntityType<StorageEntity>> STORAGE =
+            ENTITY_TYPES.register("storage", () -> EntityType.Builder.of(StorageEntity::new, MobCategory.CREATURE)
+                    .sized(0.6f, 1.95f)
+                    .build("storage"));
+
+    public static final RegistryObject<EntityType<BlacksmithEntity>> BLACKSMITH =
+            ENTITY_TYPES.register("blacksmith", () -> EntityType.Builder.of(BlacksmithEntity::new, MobCategory.CREATURE)
+                    .sized(0.6f, 1.95f)
+                    .build("blacksmith"));
+
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }
