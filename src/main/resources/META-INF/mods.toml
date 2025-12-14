@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://github.com/yourname/nothomealone/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+updateJSONURL="https://example.com/update.json"
+displayURL="https://github.com/yourname/nothomealone"
+logoFile="logo.png"
+credits="Thanks to the Forge team"
+authors="${mod_authors}"
+description='''${mod_description}'''
+
+[[dependencies.nothomealone]]
+    modId="forge"
+    mandatory=true
+    versionRange="${forge_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.nothomealone]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
