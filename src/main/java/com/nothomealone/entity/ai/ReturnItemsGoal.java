@@ -98,9 +98,17 @@ public class ReturnItemsGoal extends Goal {
             // Keep tools
             if (isTool(stack)) continue;
             
-            // Check if this is a required building material
+            // Check if this is a required building material (exact match or compatible)
             Block block = Block.byItem(stack.getItem());
-            if (!requiredMaterials.containsKey(block)) {
+            boolean isNeeded = false;
+            for (Block requiredBlock : requiredMaterials.keySet()) {
+                if (block == requiredBlock || builder.areBlocksCompatible(block, requiredBlock)) {
+                    isNeeded = true;
+                    break;
+                }
+            }
+            
+            if (!isNeeded) {
                 return true; // Found an unnecessary item
             }
         }
@@ -149,9 +157,16 @@ public class ReturnItemsGoal extends Goal {
                 // Task completed: return everything that's not a tool
                 shouldReturn = true;
             } else if (requiredMaterials != null) {
-                // Task active: only return items not needed for building
+                // Task active: only return items not needed for building (check compatibility)
                 Block block = Block.byItem(builderStack.getItem());
-                shouldReturn = !requiredMaterials.containsKey(block);
+                boolean isNeeded = false;
+                for (Block requiredBlock : requiredMaterials.keySet()) {
+                    if (block == requiredBlock || builder.areBlocksCompatible(block, requiredBlock)) {
+                        isNeeded = true;
+                        break;
+                    }
+                }
+                shouldReturn = !isNeeded;
             }
             
             if (shouldReturn) {

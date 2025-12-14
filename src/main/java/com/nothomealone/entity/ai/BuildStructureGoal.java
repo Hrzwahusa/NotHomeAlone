@@ -31,7 +31,7 @@ public class BuildStructureGoal extends Goal {
         boolean hasTask = task != null;
         boolean notCompleted = task != null && !task.isCompleted();
         
-        // Check if builder has the material for THE NEXT BLOCK to place
+        // Check if builder has the material for THE NEXT BLOCK to place (exact match or compatible)
         boolean hasMaterials = false;
         if (hasTask && task != null) {
             com.nothomealone.structure.BuildTask.BuildStep nextStep = task.getNextStep();
@@ -39,9 +39,12 @@ public class BuildStructureGoal extends Goal {
                 net.minecraft.world.level.block.Block requiredBlock = nextStep.state.getBlock();
                 net.minecraft.core.NonNullList<net.minecraft.world.item.ItemStack> inventory = builder.getInventory();
                 for (net.minecraft.world.item.ItemStack stack : inventory) {
-                    if (!stack.isEmpty() && net.minecraft.world.level.block.Block.byItem(stack.getItem()) == requiredBlock) {
-                        hasMaterials = true;
-                        break;
+                    if (!stack.isEmpty()) {
+                        net.minecraft.world.level.block.Block stackBlock = net.minecraft.world.level.block.Block.byItem(stack.getItem());
+                        if (stackBlock == requiredBlock || builder.areBlocksCompatible(stackBlock, requiredBlock)) {
+                            hasMaterials = true;
+                            break;
+                        }
                     }
                 }
             }

@@ -111,7 +111,7 @@ public abstract class BaseStationBlock extends BaseEntityBlock {
     
     /**
      * Loads the crafting materials from the recipe and stores them in the station's inventory.
-     * Excludes tools (items with durability/craftingRemainingItem).
+     * Includes ALL materials from the crafting recipe (materials AND tools).
      */
     private void loadCraftingMaterials(Level level, StationBlockEntity stationEntity) {
         // Find the recipe for this station block
@@ -122,7 +122,7 @@ public abstract class BaseStationBlock extends BaseEntityBlock {
             ItemStack result = recipe.getResultItem(level.registryAccess());
             if (result.getItem() == this.asItem()) {
                 // Found the recipe for this station
-                // Count non-tool ingredients
+                // Count ALL ingredients (including tools)
                 Map<Item, Integer> ingredientCounts = new HashMap<>();
                 
                 for (var ingredient : recipe.getIngredients()) {
@@ -130,8 +130,8 @@ public abstract class BaseStationBlock extends BaseEntityBlock {
                     if (matchingItems.length > 0) {
                         ItemStack item = matchingItems[0];
                         
-                        // Skip tools (items with durability or crafting remaining items like buckets)
-                        if (!item.isDamageableItem() && !item.hasCraftingRemainingItem()) {
+                        // Skip items with crafting remaining (like buckets that leave empty buckets)
+                        if (!item.hasCraftingRemainingItem()) {
                             Item itemType = item.getItem();
                             ingredientCounts.put(itemType, ingredientCounts.getOrDefault(itemType, 0) + 1);
                         }
@@ -147,7 +147,7 @@ public abstract class BaseStationBlock extends BaseEntityBlock {
                     }
                 }
                 
-                System.out.println("[BaseStationBlock] Loaded " + ingredientCounts.size() + " different material types into station inventory");
+                System.out.println("[BaseStationBlock] Loaded " + ingredientCounts.size() + " different items (materials + tools) into station inventory");
                 break;
             }
         }
